@@ -9,22 +9,12 @@ var last_bell = ""
 
 function getBellImage() {
     var bells = [
-        "bradybunch.gif",
-        "busey.gif",
-        "cartoon.gif",
-        "cowbell.gif",
-        "ednorton.gif",
-        "mouse.gif",
-        "olympics.gif",
-        "seth.gif",
-        "timeclock.gif",
-        "triangle.gif",
-        "christmas.gif",
-        "weinerdog.gif",
-        "hat.gif",
-        "mackey.gif",
-        "morticia.gif",
-        "boxing.gif"
+        "https://foo.cloudfront.net/images/bells/bradybunch.gif",
+        "https://foo.cloudfront.net/images/bells/busey.gif",
+        "https://foo.cloudfront.net/images/bells/cartoon.gif",
+        "https://foo.cloudfront.net/images/bells/cowbell.gif",
+        "https://foo.cloudfront.net/images/bells/ednorton.gif",
+        "https://foo.cloudfront.net/images/bells/mouse.gif"
     ]
     var this_bell = "";
     //with only a handful of bells, we were getting a lot of back-to-back repeats; this is a kluge to prevent those
@@ -33,7 +23,7 @@ function getBellImage() {
     }
     last_bell = this_bell;
     // slack won't auto-expand an image if the same image is posted back-to-back; adding the guid forces the auto-expand
-    return bell_path + this_bell + "?" + guid();
+    return this_bell + "?" + guid();
 }
 
 function guid() {
@@ -45,7 +35,7 @@ function guid() {
   return s4();
 }
 
-// could be moved into a datastore, but we have few enough salespeople that it's not worth paying for right now...
+// could be moved into a datastore, but we have few enough salespeople that it's not worth it right now...
 function getinitiator(button_id){
     switch(button_id) {
         case 'G030XXXXXXXXXXXX':
@@ -54,9 +44,6 @@ function getinitiator(button_id){
         case 'G030XXXXXXXXXXXX':
             return "Joe"
             break;
-        case 'G030XXXXXXXXXXXX':
-            // "shared" button for the office
-            return "HQ"
         default:
             return "Someone"
     }    
