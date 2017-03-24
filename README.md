@@ -30,7 +30,7 @@ aws lambda create-function --function-name slack-iot-sales-bell --handler index.
 * SLACK_CHANNEL - the name of the channel you want to post to. e.g., #allstaff
 * SLACK_USERNAME - the name of the user you want to post the message. It doesn't have to be a real user. e.g., Sales Bell
 * SLACK_WEBHOOK_PATH - the path that you got in the first step. e.g, /services/X0123X/X0123X/XXXX0123XXX
-[[https://github.com/dominic-oconnor/slack-iot-sales-bell/blob/master/images/environmentvariables.png|alt=environmentvariables]]
+![alt tag](https://raw.githubusercontent.com/dominic-oconnor/slack-iot-sales-bell/master/images/environmentvariables.png)
 
 ## Test the Lambda/Slack Integration
 ```shell
