@@ -4,7 +4,6 @@ const https = require('https');
 var webhook_path = process.env.SLACK_WEBHOOK_PATH;
 var slack_channel = process.env.SLACK_CHANNEL;
 var slack_user = process.env.SLACK_USERNAME;
-var bell_path = process.env.BELL_PATH;
 var last_bell = ""
 
 function getBellImage() {

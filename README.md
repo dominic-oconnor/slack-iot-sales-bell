@@ -25,14 +25,19 @@ aws lambda create-function --function-name slack-iot-sales-bell --handler index.
 ```
 
 ## Set your Lambda environment variables
-
+1. Go to your Lambda function in the AWS Web GUI and go to the Code tab
+1. Set the following Environment variables:
+* SLACK_CHANNEL - the name of the channel you want to post to. e.g., #allstaff
+* SLACK_USERNAME - the name of the user you want to post the message. It doesn't have to be a real user. e.g., Sales Bell
+* SLACK_WEBHOOK_PATH - the path that you got in the first step. e.g, /services/X0123X/X0123X/XXXX0123XXX
+[[https://github.com/dominic-oconnor/slack-iot-sales-bell/blob/master/images/environmentvariables.png|alt=environmentvariables]]
 
 ## Test the Lambda/Slack Integration
 ```shell
-aws lambda invoke-function --function name slack-iot-sales-bell
+aws lambda invoke --function-name slack-iot-sales-bell --region us-west-2  /dev/null
 ```
 You should see one of the bell images show up as a message in your chosen Slack channel.
 
 ## Set up the IoT Button
 You can order your IoT button [here](https://aws.amazon.com/iotbutton/)
-Follow the steps in the wiki to add the IoT button as a trigger to your Lambda function.
+Follow the [steps in the wiki](https://github.com/dominic-oconnor/slack-iot-sales-bell/wiki/Attaching-your-IoT-button-to-your-Lambda-function) to add the IoT button as a trigger to your Lambda function.
